@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible"content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>B站缓存视频播放器</title>
+</head>
+<body >
+<input type="file" id="files">
+<audio  id="mpt">
+  <source src="" type="audio/mpeg" >
+</audio> 
+
+<video style="width:100vw;margin-left:-8px;" controls id="mpf" muted  onplaying="aligning()" onpause="stop()">
+  <source src="" type="video/mp4" >
+</video>
+<script>
+
+var files = document.getElementById('files');
+
+var mpt = document.getElementById('mpt');
+var mpf = document.getElementById('mpf');
+files.onchange =function (){
+var a=document.getElementById('files').value;
+
+if(a.endsWith(".mp3")==true){
+mpt.src = URL.createObjectURL(this.files[0]);}else if(a.endsWith(".mp4")==true){
+mpf.src = URL.createObjectURL(this.files[0]);}else{
+document.getElementById('files').value="";
+}
+}
+function aligning(){
+mpt.play();
+var a = document.getElementById("mpf").currentTime;
+document.getElementById("mpt").currentTime=a;
+mpt.play();
+}
+
+function stop(){
+mpt.pause();
+}
+
+
+
+
+</script>
+</body>
+</html>
