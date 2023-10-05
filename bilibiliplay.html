@@ -2,15 +2,20 @@
 <html lang="en">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible"content="IE=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>B站缓存视频播放器</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>B站缓存视频播放网页</title>
+<style>
+input {
+color:white;
+}
+</style>
 </head>
-<body >
+<body style="background-color:black;">
 <input type="file" id="files">
 <audio  id="mpt">
   <source src="" type="audio/mpeg" >
 </audio> 
 
-<video style="width:100vw;margin-left:-8px;" controls id="mpf" muted  onplaying="aligning()" onpause="stop()">
+<video style="width:100vw;margin-left:-8px;background-color:#171717;" controls id="mpf" muted  onplaying="aligning()" onpause="stop()">
   <source src="" type="video/mp4" >
 </video>
 <script>
